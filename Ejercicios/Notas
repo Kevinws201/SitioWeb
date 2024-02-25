@@ -1,0 +1,30 @@
+Navs and tabs - Encabezado
+Floating labels - Ingresar usuario y contraseña
+Badge - perfil
+Card - imagenes
+Collapse - boton sobre nosotros
+dropdowns - botones perfil/Encabezado
+br - Saltos de linea pequeños
+footer - Agregar marcos en el pie de pagina
+small -  util para pie de pagina
+fontsize - tamaño de la letra/fuente
+fontfamily y google fonts - cambiar la fuente de la letra
+borderstyle - arroba derecha abajo izquierda;
+a[href="link"] - selectro de atributo
+prioridad entre jerarquia de selectrores, !important, style, Id, clases, atributos genericos
+color picker - personalizar tus colores
+offcanvas - funcion muy interesante
+--pinguino-inferior/var(--pinguino-inferior) - Variables en css
+var(--pinguino-inferior,black) / background-color:blue var(--pinguino-inferior) - agregar color o valor de respaldo
+
+Next.js es un framework de React. Ambos para Frontend
+Node.js y express desarrollan backend.
+.push y .pop - Agregar o eliminar en la ultima celca del arreglo
+.shift y .unshift - agregar o eliminar en la primera celda del arreglo
+
+let - Variable que se limita al bloque en el que se esta usando
+var - Es de alcance global
+const - Siempre el mismo valor, se tiene que inicializar cuando se declara
+
+prompt - pedir o consultar informacion con el usuario
+bagstics - ayuda concatenar mas facilmente

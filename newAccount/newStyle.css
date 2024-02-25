@@ -1,0 +1,49 @@
+/* DISEÑOS AL PROGRAMA GENERALES */
+body{
+    font-family:"Times New Roman",Times,serif !important;
+    background-color:rgba(247, 245, 245, 0.308) !important;
+    }
+
+/* ENCABEZADO */
+.fondoTop{
+    background-color: rgb(22, 22, 150);
+}
+
+.logoGris {
+    width: 100px;
+    height: 100px;
+    order: 1;
+    flex-grow: 1;
+}
+.logoTec {
+     width: 100px;
+    height: 100px;
+    justify-content:end;
+    order: 2;
+    flex-grow: 3;
+}
+.logoITT {
+    width: 100px;
+    height: 100px;
+    order: 3;
+    flex-grow: 1;
+}
+.Encabezado {
+    background-color: rgba(148, 148, 148, 0.363);
+}
+
+/* CONTENIDO PRINCIPAL */
+main {
+    background-color:rgba(148, 148, 148, 0.363);
+    padding-bottom: 50px;
+}
+
+/* PIE DE PAGINA */
+footer {
+    font-weight:200;
+}
+.paginaPie {
+        background-color:rgba(247, 245, 245, 0.123);
+}
+
+/*Esto es un comentario*/
