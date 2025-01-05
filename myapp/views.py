@@ -1,24 +1,93 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render,redirect,redirect
+from django.contrib.auth import login
+from .forms import CustomUserCreationForm,CustomAuthenticationForm
+from django.contrib.auth.views import LoginView
+from django.contrib.auth.forms import AuthenticationForm
+from django.urls import reverse_lazy
+from .models import CustomUser
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 # Create your views here.
+def login_required_with_message(view_func):
+    def _wrapped_view(request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            messages.warning(request, "Por favor, inicie sesión para acceder a esta página.")
+            return redirect('login')  # Asegúrate de que 'login' es el nombre de tu vista de inicio de sesión
+        return view_func(request, *args, **kwargs)
+    return _wrapped_view
+
 def index(request):
-    return render(request, "index.html")
+    numero = 0
+    return render(request, "index.html",{'numero': numero})
 
 def about(request):
     return render(request,"about.html")
 
 def Home(request):
-    return render(request,'index.html')
+    numero = 0
+    return render(request,'index.html',{'numero':numero})
 
 def Login(request):
-    return render(request,'login.html')
+    numero = 0
+    return render(request,'login.html', {'numero':numero})
 
-def Password(request):
-    return render(request,'password.html')
 
 def newAccount(request):
-    return render(request, 'new.html'),
+    numero = 0
+    if request.method == "POST":
+        form = CustomUserCreationForm(request.POST)
+        if form.is_valid(): 
+            user = form.save()
+            login(request, user)
+            return redirect("home")
+    else:
+        form = CustomUserCreationForm()
+    return render(request, "new.html", {"form": form})
 
+@login_required_with_message
 def mainMenu(request):
-    return render(request, 'mainMenu.html')
+    numero = 1
+    return render(request, 'mainMenu.html', {'numero':numero})
+
+@login_required_with_message
+def Estatus(request):
+    numero = 1
+    return render(request,'estatus.html', {'numero':numero})
+
+def carrusel(request):
+    if request.method == "POST":
+        form = CustomUserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect("home")
+    else:
+        form = CustomUserCreationForm()
+    return render(request, "carrusel.html", {"form": form})
+
+class CustomLoginView(LoginView):
+    template_name = 'login.html'
+    authentication_form = CustomAuthenticationForm
+    redirect_authenticated_user = True
+
+    def get_success_url(self):
+        return reverse_lazy('mainMenu')  # Redirige al nombre de URL 'home' después de iniciar sesión
+
+from django.core.mail import send_mail
+import random
+def enviar_correo(request):
+    asunto = 'Restablecimiento de contraseña'
+    mensaje = 'Codigo: '
+    remitente = 'l21212019@tectijuana.edu.mx'  # Mismo correo configurado en EMAIL_HOST_USER
+    destinatarios = ['kevinsexy5000@gmail.com']  # Cambia esto por el correo de destino
+    numero = random(10000000)
+    try:
+        send_mail(asunto, mensaje, remitente, destinatarios)
+        return HttpResponse('Correo enviado exitosamente.')
+    except Exception as e:
+        return HttpResponse(f'Error al enviar el correo: {str(e)}')
+def Password(request):
+    numero = 0
+    return render(request,'password.html', {'numero':numero})

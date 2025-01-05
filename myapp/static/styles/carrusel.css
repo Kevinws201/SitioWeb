@@ -1,0 +1,44 @@
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 600px; /* ajusta el ancho según sea necesario */
+    margin: 0 auto;
+  }
+  
+  .slide {
+    display: none;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .slide img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .description {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  /* Animación del carrusel */
+  .slide:first-child {
+    display: block;
+  }
+  
+  @keyframes slide {
+    0% { left: 0; }
+    100% { left: -100%; }
+  }
+  
+  .slide {
+    animation: slide 5s infinite;
+  }
+  

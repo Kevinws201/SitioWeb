@@ -1,69 +1,24 @@
 /* DISEÑOS AL PROGRAMA GENERALES */
-body{
-    font-family:"Times New Roman",Times,serif !important;
-    background-color:rgba(247, 245, 245, 0.308) !important;
-    }
-
-/* ENCABEZADO */
-.fondoTop{
-    background-color: rgb(22, 22, 150);
-}
-
-.logoGris {
-    width: 100px;
-    height: 100px;
-    order: 1;
-    flex-grow: 1;
-}
-.logoTec {
-     width: 100px;
-    height: 100px;
-    justify-content:end;
-    order: 2;
-    flex-grow: 3;
-}
-.logoITT {
-    width: 100px;
-    height: 100px;
-    order: 3;
-    flex-grow: 1;
-}
-.Encabezado {
-    background-color: rgba(148, 148, 148, 0.363);
+body {
+    font-family: "Times New Roman", Times, serif !important;
+    background-color: rgb(255, 255, 255) !important;
 }
 
 /* CONTENIDO PRINCIPAL */
 main {
-    background-color:rgba(148, 148, 148, 0.363);
-    border-radius: 50px;
-    padding-bottom: 50px;
-    position: absolute;
-   top: 100px;
+    background-color: #e0e0e0; /* Color de fondo gris claro */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);    
+    padding: 5pc;
+}
+.Bloque{
+    
 }
 
 .Sesion {
     padding-top: 20px;
     padding-bottom: 30px;
 }
-#floatingInput {
-
-}
-#floatingPassword {
-    
-}
 
 .Botones {
     position: relative;
-    top: 50px;
 }
-
-/* PIE DE PAGINA */
-footer {
-    font-weight:200;
-    position: relative;
-    top: 3% ;
-}
-.paginaPie {
-        background-color:rgba(148, 148, 148, 0.363);
-}
-

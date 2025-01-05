@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,7 +27,9 @@ SECRET_KEY = 'django-insecure-fck--g_ju!m4$sfp0z+j3oh%9-j&6r5ze0@g+u)yvl($qgmzln
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# settings.py
+ALLOWED_HOSTS = ['192.168.0.1', 'localhost', '127.0.0.1']
+
 
 
 # Application definition
@@ -76,10 +80,15 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'sitioWebdb',  # Reemplaza con el nombre de tu base de datos
+        'USER': 'root',                 # Tu usuario de MySQL
+        'PASSWORD': 'Obrador201',          # La contraseña de tu usuario
+        'HOST': 'localhost',                  # O la dirección de tu servidor de base de datos
+        'PORT': '3306',                       # Puerto por defecto de MySQL
     }
 }
+
 
 
 # Password validation
@@ -88,15 +97,6 @@ DATABASES = {
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
 
@@ -121,4 +121,13 @@ STATIC_URL = 'static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+AUTH_USER_MODEL = 'myapp.CustomUser'
+
+LOGIN_URL = '/login'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'l21212019@tectijuana.edu.mx'  # Cambia esto por tu correo
+EMAIL_HOST_PASSWORD = 'Crack201'  # Cambia esto por tu contraseña o token de aplicación
