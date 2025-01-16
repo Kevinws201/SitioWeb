@@ -1,9 +1,9 @@
 from django.http import HttpResponse
 from django.shortcuts import render,redirect,redirect
-from django.contrib.auth import login
+from django.contrib.auth import login, update_session_auth_hash
 from .forms import CustomUserCreationForm,CustomAuthenticationForm
 from django.contrib.auth.views import LoginView
-from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm
 from django.urls import reverse_lazy
 from .models import CustomUser
 from django.contrib.auth.decorators import login_required
@@ -58,14 +58,19 @@ def Estatus(request):
 
 def carrusel(request):
     if request.method == "POST":
-        form = CustomUserCreationForm(request.POST)
+        form = PasswordChangeForm(request.user, request.POST)
         if form.is_valid():
             user = form.save()
-            login(request, user)
+            update_session_auth_hash(request, user)  # Mantiene al usuario autenticado
+            messages.success(request,"Contraseña Restablecida exitosamente")
             return redirect("home")
+        else:
+            messages.error(request, 'Por favor corrige los errores indicados.')
     else:
-        form = CustomUserCreationForm()
-    return render(request, "carrusel.html", {"form": form})
+        form = PasswordChangeForm(request.user)
+    return render(request, 'carrusel.html', {'form': form})
+
+
 
 class CustomLoginView(LoginView):
     template_name = 'login.html'
@@ -76,13 +81,11 @@ class CustomLoginView(LoginView):
         return reverse_lazy('mainMenu')  # Redirige al nombre de URL 'home' después de iniciar sesión
 
 from django.core.mail import send_mail
-import random
 def enviar_correo(request):
     asunto = 'Restablecimiento de contraseña'
     mensaje = 'Codigo: '
     remitente = 'l21212019@tectijuana.edu.mx'  # Mismo correo configurado en EMAIL_HOST_USER
     destinatarios = ['kevinsexy5000@gmail.com']  # Cambia esto por el correo de destino
-    numero = random(10000000)
     try:
         send_mail(asunto, mensaje, remitente, destinatarios)
         return HttpResponse('Correo enviado exitosamente.')
