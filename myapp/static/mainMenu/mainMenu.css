@@ -1,54 +1,35 @@
 /*DISEÑOS GENERALES*/
-body{
-    font-family:"Times New Roman",Times,serif !important;
-    background-color:white!important;
+
+body {
+    font-family: "Times New Roman", Times, serif !important;
+    background-color: white!important;
 }
 
+
 /* CONTENIDO PRINCIPAL */
+
 main {
-    background-color: #e0e0e0; /* Color de fondo gris claro */
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);    padding-bottom: 50px;
-    padding-top:20px;
+    background-color: #e0e0e0;
+    /* Color de fondo gris claro */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .notas {
-    position: relative; 
+    position: relative;
 }
-.info {
-    padding: 3px 5px;
-    border-bottom: 1px solid #ddd;
-    border-top: 1px solid #fff;
-}
-.informacion {
-    font-size:15px;
-}
- 
-/* .titulos {
-    
-    background:white;
-    border-radius:30px;
-    border:5px;
-    border : grey solid ;
-} */
 
-.titulo-escolar {
-    position: absolute;
-    top: -25px;
-    left: 10px;
-    padding: 4px 10px;
-    background: #f8f8f8;
-    -webkit-border-radius: 30px;
-    -webkit-box-shadow: 0 1px 2px #ccc;
+.informacion {
+    font-size: 15px;
 }
+
 .titulo-personal {
     position: absolute;
     top: -25px;
     left: 10px;
     padding: 4px 10px;
     background: #f8f8f8;
-    -webkit-border-radius: 30px;
-    -webkit-box-shadow: 0 1px 2px #ccc;
 }
+
 .info-escolar {
     padding: 3px 5px;
     border-bottom: 1px solid #ddd;
@@ -59,8 +40,9 @@ main {
     position: relative;
     margin: 20px;
 }
-.info-personal{
-   padding: 3px 5px;
+
+.info-personal {
+    padding: 3px 5px;
     border-bottom: 1px solid #ddd;
     border-top: 1px solid #fff;
     float: left;

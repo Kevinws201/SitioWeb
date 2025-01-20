@@ -1,103 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="/static/styles/progress.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <title>Estatus</title>
+    <link rel="stylesheet" href="/static/Estatus/estatus.css">
+    <title>Estatus de Titulación</title>
 
 </head>
-<style>
-    /* DISEÑOS AL PROGRAMA GENERALES */
-    body {
-        font-family: "Times New Roman", Times, serif !important;
-    }
-
-    /* CONTENIDO PRINCIPAL */
-    main {
-        background-color: #e0e0e0;
-        /* Color de fondo gris claro */
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .format {
-        background-color: #e0e0e0;
-        /* Color de fondo gris claro */
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .spinner-grow-static {
-        width: 10pc;
-        height: 10pc;
-        background-color: green;
-        border-radius: 50%;
-        opacity: 1;
-        animation: none;
-    }
-
-    .spinner-container {
-        display: flex;
-        gap: 10rem;
-        /* Espacio entre los spinners */
-        justify-content: center;
-        /* Opcional: centra los spinners horizontalmente */
-    }
-
-    .spinner-grow-large {
-        width: 10rem;
-        /* Tamaño grande del spinner */
-        height: 10rem;
-        /* Tamaño grande del spinner */
-        background-color: grey;
-    }
-</style>
 
 <body>
-    <main class="format">
-        <article>
-            <section>
-                <h1>Estatus de Titulacion</h1>
-                <div class="spinner-container ">
-                    <div class="spinner-grow-static">
-                        <span class="visually-hidden">A</span>
-                    </div>
+    <main>
+        <!-- Título -->
+        <h1>Progreso de Titulación</h1>
 
-                    <div class="spinner-grow-static">
-                        <span class="visually-hidden">A</span>
-                    </div>
+        <!-- Barra de progreso -->
+        <div class="progress-container">
+            <!-- Línea de progreso -->
+            <div class="progress-bar"></div>
 
-                    <div class="spinner-grow spinner-grow-large" role="">
-                        <span class="visually-hidden">A</span>
-                    </div>
+            <!-- Fases -->
+            <div class="progress-step completed" title="Solicitud Procesada">1</div>
+            <div class="progress-step completed" title="Documentos Aceptados">2</div>
+            <div class="progress-step current" title="Titulación en Desarrollo">3</div>
+            <div class="progress-step" title="Título Generado">4</div>
+        </div>
 
-                    <div class="spinner-grow-static spinner-grow-large">
-                        <span class="visually-hidden">A</span>
-                    </div>
-                </div>
-            </section>
+        <!-- Detalles de la fase actual -->
+        <div class="phase-details">
+            <h4>Fase Actual: Titulación en Desarrollo</h4>
+            <p>Fecha estimada de finalización: <strong>2/9/24</strong></p>
+        </div>
 
-            <section>
-                <div>
-                    <h1>Detalles de titulación</h1><br>
-                    <h4>7/6/24: Solicitud Procecada</h1><br>
-                        <h4>10/8/24: Documentos Aceptados</h1><br>
-                            <h4>2/9/24: Titulacion en Desarrollo</h1><br>
-                                <h4>31/12/24: Titulo Generado</h1>
-                </div>
-            </section>
-        </article>
+        <!-- Lista de fases -->
+        <section class="details-section">
+            <h4>Historial de Progreso:</h4>
+            <ul class="list-group">
+                <li class="list-group-item text-success">
+                    <strong>7/6/24:</strong> Solicitud Procesada (Completado)
+                </li>
+                <li class="list-group-item text-success">
+                    <strong>10/8/24:</strong> Documentos Aceptados (Completado)
+                </li>
+                <li class="list-group-item text-warning">
+                    <strong>2/9/24:</strong> Titulación en Desarrollo (En Progreso)
+                </li>
+                <li class="list-group-item text-secondary">
+                    <strong>31/12/24:</strong> Título Generado (Pendiente)
+                </li>
+            </ul>
+        </section>
     </main>
 </body>
-
 
 {% endblock %}
 

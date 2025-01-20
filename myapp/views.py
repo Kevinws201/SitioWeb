@@ -34,7 +34,7 @@ def Login(request):
     return render(request,'login.html', {'numero':numero})
 
 
-def newAccount(request):
+def Register(request):
     numero = 0
     if request.method == "POST":
         form = CustomUserCreationForm(request.POST)
@@ -44,7 +44,7 @@ def newAccount(request):
             return redirect("home")
     else:
         form = CustomUserCreationForm()
-    return render(request, "new.html", {"form": form})
+    return render(request, "register.html", {"form": form})
 
 @login_required_with_message
 def mainMenu(request):
@@ -56,7 +56,7 @@ def Estatus(request):
     numero = 1
     return render(request,'estatus.html', {'numero':numero})
 
-def carrusel(request):
+def RestorePassword(request):
     if request.method == "POST":
         form = PasswordChangeForm(request.user, request.POST)
         if form.is_valid():
@@ -68,8 +68,7 @@ def carrusel(request):
             messages.error(request, 'Por favor corrige los errores indicados.')
     else:
         form = PasswordChangeForm(request.user)
-    return render(request, 'carrusel.html', {'form': form})
-
+    return render(request, 'restorePassword.html', {'form': form})
 
 
 class CustomLoginView(LoginView):
@@ -91,6 +90,6 @@ def enviar_correo(request):
         return HttpResponse('Correo enviado exitosamente.')
     except Exception as e:
         return HttpResponse(f'Error al enviar el correo: {str(e)}')
-def Password(request):
+def SecurityPassword(request):
     numero = 0
-    return render(request,'password.html', {'numero':numero})
+    return render(request,'securityPassword.html', {'numero':numero})
