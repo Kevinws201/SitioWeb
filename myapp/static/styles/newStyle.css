@@ -1,0 +1,109 @@
+/* DISEÑOS GENERALES */
+
+body {
+    font-family: "Times New Roman", Times, serif !important;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* CONTENEDOR DEL FORMULARIO */
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh;
+}
+
+.form-container {
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px 20px;
+    /* Reducido el padding */
+    border-radius: 10px;
+    width: 100%;
+    max-width: 350px;
+    /* Reducido el tamaño máximo */
+    margin: 0 10px;
+    /* Agregado margen lateral */
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    /* Menos espacio debajo del título */
+    font-size: 1.2em;
+    /* Reducido el tamaño del título */
+    color: #333;
+}
+
+
+/* CAMPOS DEL FORMULARIO */
+
+.form-group {
+    margin-bottom: 15px;
+    /* Reducido el margen entre campos */
+}
+
+.form-group label {
+    font-weight: bold;
+    font-size: 0.9rem;
+    /* Reducido el tamaño de las etiquetas */
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    /* Reducido el padding de los inputs */
+    font-size: 0.9rem;
+    /* Reducido el tamaño de la fuente en los campos */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #007bff;
+}
+
+
+/* BOTONES */
+
+.btn {
+    width: 100%;
+    height: 40px;
+    /* Reducido el tamaño del botón */
+    font-size: 0.9rem;
+    /* Reducido el tamaño de la fuente del botón */
+    margin-top: 10px;
+    /* Menos margen superior */
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    /* Ajustado el tamaño de la fuente del enlace */
+}
+
+a:hover {
+    text-decoration: underline;
+}

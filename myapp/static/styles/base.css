@@ -1,0 +1,119 @@
+/* styles.css */
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+
+/* Barra azul superior */
+
+.barraAzul {
+    background-color: rgb(22, 22, 150);
+    /* Color azul */
+    height: 3pc;
+    /* Altura de la barra */
+    width: 100%;
+    /* Ocupa todo el ancho de la pantalla */
+}
+
+
+/* Sección de logos */
+
+.Logos {
+    background-color: white;
+    display: flex;
+    /* Habilita Flexbox */
+    justify-content: space-between;
+    /* Distribuye las imágenes a los extremos y al centro */
+    align-items: center;
+    /* Alinea verticalmente las imágenes */
+}
+
+.Logos img {
+    max-height: 100px;
+    /* Tamaño máximo de las imágenes */
+    object-fit: contain;
+    /* Asegura que las imágenes mantengan proporción */
+}
+
+.logoGris {
+    flex: 0 0 auto;
+    /* Mantiene la posición fija del logo izquierdo */
+}
+
+.logoTec {
+    flex: 0 0 auto;
+    /* Mantiene la posición fija del logo central */
+    margin: 0 auto;
+    /* Centra el logo */
+}
+
+.logoITT {
+    flex: 0 0 auto;
+    /* Mantiene la posición fija del logo derecho */
+}
+
+
+/* Menú de navegación */
+
+.nav-container {
+    background-color: #e0e0e0;
+    /* Color de fondo gris claro */
+    padding: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.nav-container:before,
+.nav-container:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 20px;
+    background: linear-gradient(to right, rgba(224, 224, 224, 1), rgba(224, 224, 224, 0));
+    /* Degradado en gris */
+}
+
+.nav-container:before {
+    left: 0;
+}
+
+.nav-container:after {
+    right: 0;
+}
+
+.nav-item {
+    margin: 0 15px;
+}
+
+.nav-link {
+    color: #333;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: #007bff;
+}
+
+main {
+    flex: 1;
+    /* Se expandirá para ocupar el espacio disponible */
+    background-color: #e0e0e0;
+}
+
+footer {
+    font-weight: 200;
+}
+
+.paginaPie {
+    background-color: rgba(224, 224, 224, 1);
+    /* Color de fondo gris claro */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}

@@ -1,49 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-{% extends 'base.html' %} {% block content %}
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/newaccount/newStyle.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <title>Formulario</title>
-
-</head>
+{% extends 'base.html' %} {% block head %}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/static/styles/newstyle.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<title>Crear Cuenta</title>
+{% endblock %}{% block content %}
 
 <body>
-    <div class="form-wrapper">
+    <div class="content">
         <div class="form-container">
             <h2>Crear Una Nueva Cuenta</h2>
-            <div class="form">
-                <span>¿Ya estás registrado? <a href="/login">Iniciar Sesión</a></span>
-            </div>
+            <span>¿Ya estás registrado? <a href="/login">Iniciar Sesión</a></span>
+
             <form method="POST" novalidate>
                 {% csrf_token %}
+                <!-- Nombre -->
                 <div class="form-group">
                     <label for="nombre">Nombre</label> {{ form.first_name }}
                 </div>
 
+                <!-- Apellido Paterno -->
                 <div class="form-group">
                     <label for="apellido">Apellido Paterno</label> {{ form.last_name }}
                 </div>
 
+                <!-- Número de Control -->
                 <div class="form-group">
                     <label for="control">Número de Control</label> {{ form.username }}
                 </div>
 
+                <!-- Contraseña -->
                 <div class="form-group">
                     <label for="password">Contraseña</label> {{ form.password1 }}
                 </div>
 
+                <!-- Confirmar Contraseña -->
                 <div class="form-group">
                     <label for="confirm-password">Confirmar Contraseña</label> {{ form.password2 }}
                 </div>
 
+                <!-- Seleccionar Carrera -->
                 <div class="form-group">
                     <label for="carrera">Seleccionar Carrera</label> {{ form.carrera }}
                 </div>
 
+                <!-- Nivel Educativo -->
                 <div class="form-group">
                     <label for="nivel">Nivel Educativo</label> {{ form.nivel_educativo }}
                 </div>
@@ -53,8 +54,5 @@
         </div>
     </div>
 
-    </div>
     {% endblock %}
 </body>
-
-</html>

@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-{% extends 'base.html' %} {% block content %}
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/Estatus/estatus.css">
-    <title>Estatus de Titulación</title>
-
-</head>
+{% extends 'base.html' %} {% block head %}
+<meta charset="UTF-8">
+<link rel="stylesheet" href="/static/styles/estatus.css">
+<title>Estatus de Titulación</title>
+{% endblock%} {% block content %}
 
 <body>
     <main>
@@ -55,5 +49,3 @@
 </body>
 
 {% endblock %}
-
-</html>

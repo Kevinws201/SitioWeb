@@ -4,117 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles/Base.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
     <title>Base</title>
-</head>
+    {% block head %}{% endblock %}
 
-<style>
-    /* styles.css */
-    
-    body {
-        background-color: rgb(252, 252, 252) !important;
-    }
-    /* ENCABEZADO */
-    
-    .fondoTop {
-        background-color: rgb(22, 22, 150);
-    }
-    
-    .logoGris {
-        width: 100px;
-        height: 100px;
-        order: 1;
-        flex-grow: 1;
-    }
-    
-    .logoTec {
-        width: 100px;
-        height: 100px;
-        justify-content: end;
-        order: 2;
-        flex-grow: 3;
-    }
-    
-    .logoITT {
-        width: 100px;
-        height: 100px;
-        order: 3;
-        flex-grow: 1;
-    }
-    
-    .Encabezado {
-        background-color: rgba(148, 148, 148, 0.363);
-    }
-    
-    .nav-container {
-        background-color: #e0e0e0;
-        /* Color de fondo gris claro */
-        padding: 10px 0;
-        border-radius: 10px;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-        position: relative;
-        margin: 20px 0;
-        overflow: hidden;
-    }
-    
-    .nav-container:before,
-    .nav-container:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 20px;
-        background: linear-gradient(to right, rgba(224, 224, 224, 1), rgba(224, 224, 224, 0));
-        /* Degradado en gris */
-    }
-    
-    .nav-container:before {
-        left: 0;
-    }
-    
-    .nav-container:after {
-        right: 0;
-    }
-    
-    .nav-item {
-        margin: 0 15px;
-    }
-    
-    .nav-link {
-        color: #333;
-        font-weight: bold;
-    }
-    
-    .nav-link:hover {
-        color: #007bff;
-    }
-    
-    footer {
-        font-weight: 200;
-    }
-    
-    .paginaPie {
-        background-color: #e0e0e0;
-        /* Color de fondo gris claro */
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    }
-</style>
+</head>
 
 <body>
     <header>
-        <!--Encabezado color azul-->
-        <div class="fondoTop ">
-            <h1>. </h1>
+        <!-- Barra azul superior -->
+        <div class="barraAzul"></div>
+
+        <!-- Sección de imágenes con flexbox -->
+        <div class="Logos d-flex justify-content-between align-items-center">
+            <!-- Logo Izquierdo -->
+            <img class="logoGris" src="/static/Images/logo_Gris.png" alt="Logo Izquierdo">
+            <!-- Logo Central -->
+            <img class="logoTec mx-auto" src="/static/Images/logo_Tecnologico.png" alt="Logo Central">
+            <!-- Logo Derecho -->
+            <img class="logoITT" src="/static/Images/Logo_ITT.png" alt="Logo Derecho">
         </div>
 
-        <div class="Logos d-flex justify-content-between row">
-            <img class="logoGris nav-item col-2" src="/static/Images/logo_Gris.png" alt="">
-            <img class="logoTec nav-item col-3" src="/static/Images/logo_Tecnologico.png" alt="">
-            <img class="logoITT nav-itemm col-1" src="/static/Images/Logo_ITT.png" alt="">
-        </div>
-
+        <!-- Menú de navegación -->
         <div class="nav-container">
             <ul class="nav justify-content-center">
                 {% if user.is_authenticated %}
@@ -131,7 +43,6 @@
                     {% csrf_token %}
                     <button type="submit" class="btn btn-link">Cerrar Sesión</button>
                 </form>
-
                 {% else %}
                 <li class="nav-item">
                     <a class="nav-link" href="/index">Inicio</a>
@@ -142,27 +53,23 @@
                 {% endif %}
             </ul>
         </div>
-
-
     </header>
 
-    <body>
-
-
+    <main>
         {% block content %} {% endblock %}
+    </main>
 
-        <footer> <br>
-            <article class="text-center">
-                <div>
-                    <h6 class="paginaPie">Instituto Tecnológico de Tijuana <br> Calzada Del Tecnológico S/N, Fraccionamiento Tomas Aquino. Tijuana, Baja California. C.P. 22414 Teléfono: +52 (664) 607 8400 <br> Tecnológico Nacional de México – Algunos derechos reservados ©
-                        2014-2018
-                        <br>
-                        <a href="https://sitec.tijuana.tecnm.mx/politica-de-privacidad/" target="_blank"> Politica y
+    <footer> <br>
+        <article class="text-center">
+            <div>
+                <h6 class="paginaPie">Instituto Tecnológico de Tijuana <br> Calzada Del Tecnológico S/N, Fraccionamiento Tomas Aquino. Tijuana, Baja California. C.P. 22414 Teléfono: +52 (664) 607 8400 <br> Tecnológico Nacional de México – Algunos derechos reservados © 2014-2018
+                    <br>
+                    <a href="https://sitec.tijuana.tecnm.mx/politica-de-privacidad/" target="_blank">Politica y
                         Privacidad </a>
-                    </h6>
-                </div>
-            </article>
-        </footer>
-    </body>
+                </h6>
+            </div>
+        </article>
+    </footer>
+</body>
 
 </html>

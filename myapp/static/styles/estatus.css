@@ -10,7 +10,9 @@ main {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
+    max-width: 95%;
+    /* Aumenta el ancho máximo */
+    width: 100%;
     margin: 30px auto;
 }
 
@@ -75,4 +77,13 @@ h1 {
 .phase-details p {
     font-size: 1.0rem;
     color: #666;
+}
+
+.details-section {
+    margin-top: 20px;
+}
+
+.list-group-item {
+    font-size: 1rem;
+    line-height: 1.5;
 }
