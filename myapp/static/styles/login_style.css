@@ -1,0 +1,203 @@
+/* Estilos generales para el cuerpo del documento */
+
+body {
+    font-family: "Times New Roman", Times, serif !important;
+    /* Establece la fuente para todo el cuerpo */
+    background-color: #f8f9fa;
+    /* Color de fondo suave */
+    margin: 0;
+    /* Elimina márgenes predeterminados */
+    padding: 0;
+    /* Elimina rellenos predeterminados */
+    display: flex;
+    /* Utiliza Flexbox para organizar los elementos */
+    min-height: 100vh;
+    /* Asegura que el cuerpo ocupe al menos el 100% de la altura de la ventana */
+}
+
+
+/* Contenedor principal donde se centra todo el contenido */
+
+.content {
+    flex: 1;
+    /* Permite que el contenedor ocupe el espacio restante disponible */
+    display: flex;
+    /* Utiliza Flexbox para centrar el contenido */
+    justify-content: center;
+    /* Centra el contenido horizontalmente */
+    align-items: center;
+    /* Centra el contenido verticalmente */
+    padding: 80px;
+    /* Añade un relleno de 20px alrededor del contenido */
+}
+
+
+/* Estilos para el contenedor de login */
+
+.login-container {
+    background: #ffffff;
+    /* Fondo blanco */
+    padding: 20px;
+    /* Relleno de 20px alrededor del contenido */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+    width: 100%;
+    /* El contenedor ocupa el 100% del ancho disponible */
+    max-width: 400px;
+    /* Establece un ancho máximo de 400px */
+}
+
+
+/* Estilos para el título dentro del contenedor de login */
+
+.login-container h2 {
+    text-align: center;
+    /* Centra el título */
+    margin-bottom: 20px;
+    /* Espacio debajo del título */
+    color: #333;
+    /* Color oscuro para el texto */
+}
+
+
+/* Estilos para los grupos de formulario */
+
+.form-group {
+    margin-bottom: 20px;
+    /* Espacio debajo de cada grupo de formulario */
+}
+
+.form-group label {
+    display: block;
+    /* Hace que la etiqueta ocupe todo el ancho disponible */
+    margin-bottom: 5px;
+    /* Espacio debajo de la etiqueta */
+}
+
+
+/* Estilos para los campos de entrada en el formulario */
+
+.form-group input {
+    width: 100%;
+    /* El campo de entrada ocupa todo el ancho disponible */
+    height: 45px;
+    /* Altura del campo de entrada */
+    padding: 10px;
+    /* Relleno dentro del campo */
+    border: 1px solid #ced4da;
+    /* Borde gris claro */
+    border-radius: 5px;
+    /* Bordes redondeados */
+}
+
+
+/* Estilos para el botón primario (login) */
+
+.btn-primary {
+    height: 45px;
+    /* Altura del botón */
+    font-size: 16px;
+    /* Tamaño de la fuente */
+    background-color: #007bff;
+    /* Color de fondo azul */
+    border-color: #007bff;
+    /* Color del borde azul */
+    transition: background-color 0.3s ease;
+    /* Transición suave para el cambio de color */
+}
+
+
+/* Estilos para el botón primario cuando el usuario pasa el mouse sobre él */
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    /* Cambia a un azul más oscuro */
+    border-color: #004085;
+    /* Cambia el borde a un color más oscuro */
+}
+
+
+/* Estilos para los enlaces adicionales (ej. "Olvidé mi contraseña") */
+
+.extra-links {
+    font-size: 0.9rem;
+    /* Tamaño de fuente pequeño */
+    color: #6c757d;
+    /* Color gris para el texto */
+}
+
+.extra-links a {
+    color: #007bff;
+    /* Color azul para los enlaces */
+    text-decoration: none;
+    /* Elimina el subrayado del enlace */
+}
+
+
+/* Estilos para los enlaces adicionales cuando el usuario pasa el mouse sobre ellos */
+
+.extra-links a:hover {
+    text-decoration: underline;
+    /* Subraya el enlace al pasar el mouse */
+}
+
+
+/* Estilos para el icono de ocultar/mostrar la contraseña */
+
+.toggle-password {
+    position: absolute;
+    /* Posiciona el icono de forma absoluta */
+    right: 10px;
+    /* Alinea el icono a la derecha */
+    top: 50%;
+    /* Lo coloca verticalmente al centro */
+    transform: translateY(-50%);
+    /* Ajusta para centrarlo verticalmente */
+    cursor: pointer;
+    /* Cambia el cursor a un puntero cuando el usuario pasa el mouse */
+    color: #6c757d;
+    /* Color gris para el icono */
+}
+
+
+/* Estilos para los mensajes de error o éxito */
+
+.messages {
+    margin-bottom: 20px;
+    /* Espacio debajo del mensaje */
+}
+
+
+/* Estilos para las alertas de mensajes */
+
+.alert {
+    text-align: center;
+    /* Centra el texto de la alerta */
+    padding: 10px;
+    /* Añade un relleno dentro de la alerta */
+    border-radius: 5px;
+    /* Bordes redondeados */
+}
+
+
+/* Responsividad para dispositivos con pantallas más pequeñas */
+
+@media (max-width: 768px) {
+    /* Ajusta el contenedor de login en pantallas pequeñas */
+    .login-container {
+        padding: 15px;
+        /* Relleno reducido */
+    }
+    /* Ajusta la altura de los campos de entrada en pantallas pequeñas */
+    .form-group input {
+        height: 40px;
+        /* Reduce la altura de los campos */
+    }
+    /* Ajusta la altura del botón en pantallas pequeñas */
+    .btn-primary {
+        height: 40px;
+        /* Reduce la altura del botón */
+    }
+}

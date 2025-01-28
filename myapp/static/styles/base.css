@@ -1,10 +1,16 @@
-/* styles.css */
+/* Estilos generales para el cuerpo de la página */
 
 body {
+    font-family: "Times New Roman", Times, serif !important;
+    /* Define la tipografía */
     display: flex;
+    /* Usa Flexbox para estructurar el contenido */
     flex-direction: column;
+    /* Organiza los elementos en una columna */
     min-height: 100vh;
+    /* Asegura que el cuerpo ocupe al menos toda la altura de la pantalla */
     margin: 0;
+    /* Elimina los márgenes por defecto */
 }
 
 
@@ -14,9 +20,9 @@ body {
     background-color: rgb(22, 22, 150);
     /* Color azul */
     height: 3pc;
-    /* Altura de la barra */
+    /* Establece la altura de la barra a 3pc (3 veces el tamaño de la fuente) */
     width: 100%;
-    /* Ocupa todo el ancho de la pantalla */
+    /* La barra ocupa todo el ancho de la pantalla */
 }
 
 
@@ -24,96 +30,153 @@ body {
 
 .Logos {
     background-color: white;
+    /* Fondo blanco para la sección de logos */
     display: flex;
-    /* Habilita Flexbox */
+    /* Habilita Flexbox para organizar los elementos dentro */
     justify-content: space-between;
-    /* Distribuye las imágenes a los extremos y al centro */
+    /* Distribuye los logos a los extremos y al centro */
     align-items: center;
     /* Alinea verticalmente las imágenes */
 }
 
 .Logos img {
     max-height: 100px;
-    /* Tamaño máximo de las imágenes */
+    /* Limita la altura máxima de las imágenes a 100px */
     object-fit: contain;
-    /* Asegura que las imágenes mantengan proporción */
+    /* Asegura que las imágenes mantengan su proporción sin deformarse */
 }
+
+
+/* Estilo específico para el logo izquierdo */
 
 .logoGris {
     flex: 0 0 auto;
-    /* Mantiene la posición fija del logo izquierdo */
+    /* No se expandirá ni contraerá, mantiene su tamaño fijo */
 }
+
+
+/* Estilo específico para el logo central */
 
 .logoTec {
     flex: 0 0 auto;
-    /* Mantiene la posición fija del logo central */
+    /* No se expandirá ni contraerá, mantiene su tamaño fijo */
     margin: 0 auto;
-    /* Centra el logo */
+    /* Centra el logo en su contenedor */
 }
+
+
+/* Estilo específico para el logo derecho */
 
 .logoITT {
     flex: 0 0 auto;
-    /* Mantiene la posición fija del logo derecho */
+    /* No se expandirá ni contraerá, mantiene su tamaño fijo */
 }
 
 
-/* Menú de navegación */
+/* Estilos para el menú de navegación */
 
 .nav-container {
     background-color: #e0e0e0;
     /* Color de fondo gris claro */
     padding: 10px 0;
+    /* Espaciado superior e inferior */
     border-radius: 10px;
+    /* Bordes redondeados */
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
     position: relative;
+    /* Permite posicionar los pseudo-elementos antes y después */
     margin-bottom: 10px;
+    /* Espaciado debajo del contenedor */
     overflow: hidden;
+    /* Asegura que los pseudo-elementos no sobresalgan */
 }
+
+
+/* Pseudo-elementos para el degradado en los lados del menú */
 
 .nav-container:before,
 .nav-container:after {
     content: '';
+    /* Crea un elemento vacío */
     position: absolute;
+    /* Posicionamiento absoluto para ubicarlos a los lados */
     top: 0;
+    /* Alineados en la parte superior */
     bottom: 0;
+    /* Alineados en la parte inferior */
     width: 20px;
+    /* Ancho de los pseudo-elementos */
     background: linear-gradient(to right, rgba(224, 224, 224, 1), rgba(224, 224, 224, 0));
-    /* Degradado en gris */
+    /* Degradado gris */
 }
+
+
+/* El pseudo-elemento de la izquierda */
 
 .nav-container:before {
     left: 0;
+    /* Ubicado en el extremo izquierdo */
 }
+
+
+/* El pseudo-elemento de la derecha */
 
 .nav-container:after {
     right: 0;
+    /* Ubicado en el extremo derecho */
 }
+
+
+/* Estilos para los ítems del menú */
 
 .nav-item {
     margin: 0 15px;
+    /* Espaciado horizontal entre los ítems */
 }
+
+
+/* Estilos para los enlaces del menú */
 
 .nav-link {
     color: #333;
+    /* Color de texto gris oscuro */
     font-weight: bold;
+    /* Texto en negrita */
 }
+
+
+/* Efecto hover en los enlaces del menú */
 
 .nav-link:hover {
     color: #007bff;
+    /* Cambia el color a azul cuando se pasa el ratón */
 }
+
+
+/* Estilo para el contenido principal */
 
 main {
     flex: 1;
-    /* Se expandirá para ocupar el espacio disponible */
+    /* Se expande para ocupar el espacio disponible */
     background-color: #e0e0e0;
+    /* Fondo gris claro */
 }
+
+
+/* Estilos para el pie de página */
 
 footer {
     font-weight: 200;
+    /* Peso de fuente más ligero */
 }
+
+
+/* Estilos para el pie de página de la página */
 
 .paginaPie {
     background-color: rgba(224, 224, 224, 1);
-    /* Color de fondo gris claro */
+    /* Fondo gris claro */
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
 }

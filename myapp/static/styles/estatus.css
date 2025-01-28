@@ -1,89 +1,176 @@
+/* Estilos generales para el cuerpo del documento */
+
 body {
-    font-family: "Arial", sans-serif;
-    background-color: #f8f9fa;
+    font-family: "Times New Roman", Times, serif !important;
+    /* Establece la fuente de todo el cuerpo */
+    background-color: #faf9f8;
+    /* Color de fondo suave */
     margin: 0;
+    /* Elimina márgenes predeterminados */
     padding: 0;
+    /* Elimina rellenos predeterminados */
 }
+
+
+/* Estilos para el contenedor principal */
 
 main {
     background-color: #ffffff;
+    /* Fondo blanco */
     padding: 20px;
+    /* Relleno de 20px alrededor del contenido */
     border-radius: 10px;
+    /* Bordes redondeados */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
     max-width: 95%;
-    /* Aumenta el ancho máximo */
+    /* Establece el ancho máximo al 95% del ancho de la ventana */
     width: 100%;
+    /* El contenedor ocupa todo el ancho disponible */
     margin: 30px auto;
+    /* Centra el contenedor en la página y deja un margen de 30px en la parte superior e inferior */
 }
+
+
+/* Estilos para los títulos principales */
 
 h1 {
     text-align: center;
+    /* Centra el texto */
     color: #333;
+    /* Color oscuro para el texto */
 }
+
+
+/* Estilos para el contenedor de la barra de progreso */
 
 .progress-container {
     display: flex;
+    /* Utiliza Flexbox para distribuir los elementos */
     justify-content: space-between;
+    /* Espacio entre los elementos */
     align-items: center;
+    /* Alinea verticalmente los elementos */
     margin-bottom: 20px;
+    /* Espacio debajo del contenedor */
     position: relative;
+    /* Posiciona los elementos dentro del contenedor */
 }
+
+
+/* Estilos para la barra de progreso */
 
 .progress-bar {
     position: absolute;
+    /* Posicionamiento absoluto para la barra */
     top: 50%;
+    /* Coloca la barra a la mitad de la altura del contenedor */
     left: 0;
+    /* Alinea la barra a la izquierda */
     height: 4px;
+    /* Altura de la barra */
     width: 100%;
+    /* La barra ocupa todo el ancho disponible */
     background-color: #e0e0e0;
+    /* Color de fondo gris claro */
     z-index: 1;
+    /* Asegura que la barra quede por debajo de los elementos con la clase 'progress-step' */
 }
+
+
+/* Estilos para los círculos de progreso */
 
 .progress-step {
     position: relative;
+    /* Posicionamiento relativo dentro del contenedor */
     z-index: 2;
+    /* Asegura que el círculo esté por encima de la barra de progreso */
     width: 50px;
+    /* Ancho del círculo */
     height: 50px;
+    /* Alto del círculo */
     background-color: #e0e0e0;
+    /* Color gris claro por defecto */
     border-radius: 50%;
+    /* Redondea los bordes para crear un círculo */
     display: flex;
+    /* Utiliza Flexbox para centrar el contenido dentro del círculo */
     justify-content: center;
+    /* Centra horizontalmente */
     align-items: center;
+    /* Centra verticalmente */
     font-size: 16px;
+    /* Tamaño de la fuente dentro del círculo */
     font-weight: bold;
+    /* Peso de la fuente en negrita */
     color: #ffffff;
+    /* Color del texto blanco */
     transition: background-color 0.3s, transform 0.3s;
+    /* Efectos suaves para los cambios de color y escala */
 }
+
+
+/* Estilos para los círculos completados */
 
 .progress-step.completed {
     background-color: #28a745;
+    /* Color verde para los pasos completados */
 }
+
+
+/* Estilos para el círculo del paso actual */
 
 .progress-step.current {
     background-color: #ffc107;
+    /* Color amarillo para el paso actual */
     transform: scale(1.2);
+    /* Aumenta ligeramente el tamaño del círculo */
 }
+
+
+/* Estilos para la sección de detalles de la fase */
 
 .phase-details {
     text-align: center;
+    /* Centra el texto dentro de la sección */
     margin-top: 20px;
+    /* Márgen superior de 20px */
 }
+
+
+/* Estilos para los títulos de fase */
 
 .phase-details h4 {
     margin-bottom: 10px;
+    /* Espacio debajo del título */
     color: #555;
+    /* Color gris oscuro */
 }
+
+
+/* Estilos para los párrafos dentro de los detalles de la fase */
 
 .phase-details p {
     font-size: 1.0rem;
+    /* Tamaño de fuente de 1rem */
     color: #666;
+    /* Color gris */
 }
+
+
+/* Estilos para la sección de detalles adicionales */
 
 .details-section {
     margin-top: 20px;
+    /* Espacio superior de 20px */
 }
+
+
+/* Estilos para los elementos de lista dentro de la sección de detalles */
 
 .list-group-item {
     font-size: 1rem;
+    /* Tamaño de fuente de 1rem */
     line-height: 1.5;
+    /* Espaciado entre líneas */
 }

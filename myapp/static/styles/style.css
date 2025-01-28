@@ -1,29 +1,72 @@
-/* DISEÑOS AL PROGRAMA GENERALES */
-body{
-font-family:"Times New Roman",Times,serif !important;
-background-color:rgb(252, 252, 252) !important;
+/* Diseño General */
+
+body {
+    font-family: "Times New Roman", Times, serif !important;
+    /* Fuente principal para el cuerpo de la página */
+    background-color: rgb(252, 252, 252) !important;
+    /* Color de fondo gris claro */
 }
 
-/* CONTENIDO PRINCIPAL */
-main{
-    background-color: #e0e0e0; /* Color de fondo gris claro */
+main {
+    background-color: #e0e0e0;
+    /* Color de fondo gris claro para el contenedor principal */
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    /* Sombra suave para darle profundidad */
+    padding: 20px;
+    /* Espaciado dentro del contenedor */
 }
+
 .Contenido {
-    padding: 50px;
+    padding: 20px;
+    /* Espaciado interno en el contenedor .Contenido */
 }
+
 .Eventos {
-    border:solid;
-    border-color: black;
+    border: 1px solid black;
+    /* Borde negro alrededor del contenedor .Eventos */
+    border-radius: 5px;
+    /* Bordes redondeados para suavizar la apariencia */
+    margin-top: 20px;
+    /* Espacio superior entre el contenedor de eventos y el contenido anterior */
+    padding: 15px;
+    /* Espaciado interno en el contenedor .Eventos */
 }
+
+
+/* Imagen */
+
 #compasImagen {
-    width: 19pc;
-    height: 20pc;
+    max-width: 100%;
+    /* Asegura que la imagen no se salga del contenedor */
+    height: auto;
+    /* Mantiene la proporción de la imagen */
+    margin-bottom: 20px;
+    /* Espacio inferior para separar la imagen de otros elementos */
 }
+
+
+/* Texto */
 
 .tituloEvento {
-    padding-top: 20px;
-    padding-bottom: 50px;
+    padding: 10px;
+    /* Espaciado interno en el título del evento */
+    margin: 0;
+    /* Elimina el margen por defecto para mantener un ajuste exacto */
 }
 
-/*TENER CUIDADO CON LA ADAPTACION DE LA PANTALLA*/
+
+/* Media Queries para Ajuste Responsivo */
+
+
+/* Estilos aplicados cuando el ancho de la pantalla es menor o igual a 768px */
+
+@media (max-width: 768px) {
+    .Contenido {
+        padding: 10px;
+        /* Reduce el espaciado en el contenedor .Contenido en pantallas más pequeñas */
+    }
+    .Eventos {
+        text-align: center;
+        /* Centra el contenido dentro de los contenedores de eventos en pantallas pequeñas */
+    }
+}

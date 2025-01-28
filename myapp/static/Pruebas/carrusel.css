@@ -1,0 +1,87 @@
+/* Estilos para el carrusel */
+
+.carousel {
+    position: relative;
+    /* Posicionamiento relativo para permitir posicionar elementos hijos dentro */
+    overflow: hidden;
+    /* Oculta cualquier contenido que se desborde fuera del contenedor */
+    width: 100%;
+    /* El carrusel ocupa todo el ancho disponible */
+    max-width: 600px;
+    /* Establece un ancho máximo de 600px */
+    margin: 0 auto;
+    /* Centra el carrusel horizontalmente */
+}
+
+
+/* Estilos para cada diapositiva dentro del carrusel */
+
+.slide {
+    display: none;
+    /* Oculta las diapositivas por defecto */
+    position: absolute;
+    /* Posiciona las diapositivas de manera absoluta dentro del contenedor */
+    width: 100%;
+    /* Las diapositivas ocupan todo el ancho del carrusel */
+}
+
+
+/* Estilos para las imágenes dentro de cada diapositiva */
+
+.slide img {
+    width: 100%;
+    /* La imagen ocupa todo el ancho de la diapositiva */
+    height: auto;
+    /* Mantiene la proporción de la imagen */
+}
+
+
+/* Estilos para la descripción de cada diapositiva */
+
+.description {
+    position: absolute;
+    /* Posiciona la descripción de manera absoluta dentro de la diapositiva */
+    bottom: 10px;
+    /* La coloca 10px desde el borde inferior */
+    left: 0;
+    /* La coloca en el borde izquierdo */
+    width: 100%;
+    /* La descripción ocupa todo el ancho de la diapositiva */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Fondo semitransparente negro */
+    color: white;
+    /* Texto blanco */
+    padding: 10px;
+    /* Espaciado interno de 10px */
+    text-align: center;
+    /* Centra el texto */
+}
+
+
+/* Muestra la primera diapositiva (la primera será visible por defecto) */
+
+.slide:first-child {
+    display: block;
+}
+
+
+/* Definición de la animación */
+
+@keyframes slide {
+    0% {
+        left: 0;
+        /* Al inicio, la diapositiva está en su posición inicial */
+    }
+    100% {
+        left: -100%;
+        /* Al final de la animación, la diapositiva se mueve fuera de la vista a la izquierda */
+    }
+}
+
+
+/* Aplica la animación a todas las diapositivas */
+
+.slide {
+    animation: slide 5s infinite;
+    /* La animación dura 5 segundos y se repite infinitamente */
+}

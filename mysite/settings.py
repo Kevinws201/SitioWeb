@@ -28,10 +28,7 @@ SECRET_KEY = 'django-insecure-fck--g_ju!m4$sfp0z+j3oh%9-j&6r5ze0@g+u)yvl($qgmzln
 DEBUG = True
 
 # settings.py
-ALLOWED_HOSTS = ['192.168.0.1', 'localhost', '127.0.0.1']
-
-
-
+ALLOWED_HOSTS = ['192.168.0.5', 'localhost', '127.0.0.1',]
 # Application definition
 
 INSTALLED_APPS = [
@@ -131,3 +128,5 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'l21212019@tectijuana.edu.mx'  # Cambia esto por tu correo
 EMAIL_HOST_PASSWORD = 'Crack201'  # Cambia esto por tu contraseña o token de aplicación
+
+AUTH_USER_MODEL = 'myapp.CustomUser'

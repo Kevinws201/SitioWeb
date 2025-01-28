@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/styles/Base.css">
+    <link rel="stylesheet" href="/static/styles/base.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Base</title>
     {% block head %}{% endblock %}
@@ -31,23 +31,29 @@
             <ul class="nav justify-content-center">
                 {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="Opciones nav-link active" href="/mainMenu">Mi Panel</a>
+                    <!-- Panel informacion del alumno -->
+                    <a class="Opciones nav-link active" href="/main_menu">Mi Panel</a>
                 </li>
                 <li class="nav-item">
+                    <!-- Proceso de certificado del alumno -->
                     <a class="Opciones nav-link active" href="/estatus">Estatus</a>
                 </li>
                 <li class="nav-item">
-                    <a class="Opciones nav-link active" href="/restorePassword">Contraseña</a>
+                    <!-- Restaurar contraseña del usuario -->
+                    <a class="Opciones nav-link active" href="/update_password">Contraseña</a>
                 </li>
                 <form action="{% url 'logout' %}" method="post" class="d-inline">
                     {% csrf_token %}
+                    <!-- El usuario podra cerrar sesion -->
                     <button type="submit" class="btn btn-link">Cerrar Sesión</button>
                 </form>
                 {% else %}
                 <li class="nav-item">
+                    <!-- Este es el inicio de la pagina al ejecutar -->
                     <a class="nav-link" href="/index">Inicio</a>
                 </li>
                 <li class="nav-item">
+                    <!-- El usuario podra iniciar sesion -->
                     <a class="nav-link" href="/login">Acceder</a>
                 </li>
                 {% endif %}
@@ -58,7 +64,7 @@
     <main>
         {% block content %} {% endblock %}
     </main>
-
+    <!-- Pie de Pagina -->
     <footer> <br>
         <article class="text-center">
             <div>

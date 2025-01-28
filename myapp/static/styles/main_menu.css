@@ -1,0 +1,127 @@
+/* Estilos generales para el cuerpo del documento */
+
+body {
+    font-family: "Times New Roman", Times, serif !important;
+    /* Establece la fuente principal */
+    background-color: #faf9f8;
+    /* Color de fondo suave para el cuerpo */
+}
+
+
+/* Estilos para el contenedor principal */
+
+main {
+    background-color: #e9ecef;
+    /* Fondo gris claro */
+    padding: 20px 0;
+    /* Relleno en la parte superior e inferior */
+}
+
+
+/* Estilos para las notificaciones */
+
+.notas {
+    font-size: 16px;
+    /* Tamaño de fuente para las notas */
+    line-height: 1.5;
+    /* Espaciado entre líneas para mejorar la legibilidad */
+}
+
+
+/* Estilos para la imagen del usuario */
+
+.imagenUser img {
+    max-width: 150px;
+    /* Ancho máximo de la imagen */
+    height: 150px;
+    /* Altura fija para la imagen */
+    border: 3px solid #007bff;
+    /* Borde azul alrededor de la imagen */
+    padding: 5px;
+    /* Relleno dentro de la imagen */
+    background-color: #fff;
+    /* Fondo blanco alrededor de la imagen */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    /* Sombra suave alrededor de la imagen */
+}
+
+
+/* Estilos para los contenedores de información escolar y personal */
+
+.info-escolar,
+.info-personal {
+    border: 1px solid #ddd;
+    /* Borde gris claro */
+    background: #fdfdfd;
+    /* Fondo blanco para las secciones */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    /* Sombra suave para un efecto elevado */
+    border-radius: 8px;
+    /* Bordes redondeados */
+}
+
+
+/* Estilos para separar las columnas de información escolar y personal */
+
+.info-escolar {
+    margin-right: 15px;
+    /* Añade un espacio entre la información escolar y personal */
+}
+
+
+/* Espaciado entre las columnas (cuando se usa en el grid) */
+
+.row.align-items-start>div {
+    margin-bottom: 15px;
+    /* Espacio entre las columnas cuando hay varios elementos en vertical */
+}
+
+
+/* Estilos para los encabezados de la información escolar y personal */
+
+.info-escolar h2,
+.info-personal h2 {
+    font-size: 20px;
+    /* Tamaño de fuente para los encabezados */
+    padding-bottom: 10px;
+    /* Espacio debajo del encabezado */
+    border-bottom: 2px solid #007bff;
+    /* Línea azul debajo del encabezado */
+    color: #007bff;
+    /* Color azul para los encabezados */
+}
+
+
+/* Estilos para las listas dentro de la información escolar y personal */
+
+.info-escolar ul,
+.info-personal ul {
+    padding-left: 0;
+    /* Elimina el relleno en la lista */
+    margin: 0;
+    /* Elimina el margen por defecto */
+    list-style: none;
+    /* Elimina los puntos de las listas */
+}
+
+
+/* Estilos para los elementos de las listas dentro de la información escolar y personal */
+
+.info-escolar li,
+.info-personal li {
+    margin-bottom: 8px;
+    /* Espacio entre los elementos de la lista */
+    line-height: 1.5;
+    /* Espaciado entre líneas para mejor legibilidad */
+}
+
+
+/* Estilos para los elementos de texto importantes (negritas) dentro de las listas */
+
+.info-escolar strong,
+.info-personal strong {
+    color: #333;
+    /* Color de texto oscuro para las negritas */
+    font-weight: 600;
+    /* Negrita */
+}

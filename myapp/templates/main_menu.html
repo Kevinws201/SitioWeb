@@ -1,0 +1,75 @@
+{% extends 'base.html' %} {% block head %}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/static/styles/main_menu.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<title>Alumno</title>
+{% endblock %} {% block content %}
+
+<body>
+    {% csrf_token %}
+    <aside>
+        <!-- Aquí estará el menú desplegable -->
+    </aside>
+    <main>
+        <article class="container">
+            <!-- Notificaciones -->
+            <section class="mb-4">
+                <div class="notas p-3 bg-warning rounded text-dark text-center">
+                    <p>Parece que todo está despejado por aquí. Si tienes problemas con el sistema, puedes acudir al plantel a solucionarlo.</p>
+                    <p>Si estás esperando respuesta de algún trámite, por favor, sé paciente.</p>
+                    <p>Se informa a la comunidad estudiantil que está liberando residencia, acudir a recursos escolares.</p>
+                </div>
+            </section>
+
+            <!-- Información del Alumno -->
+            <section>
+                <div class="text-center mb-4">
+                    <h1>Información del Alumno</h1>
+                    <h5 class="text-success">{{ user.first_name }} {{ user.last_name }}<br>{{ user.username }}</h5>
+                </div>
+            </section>
+
+            <!-- Información Detallada -->
+            <section class="informacion">
+                <div class="row gy-4">
+                    <!-- Imagen del Usuario -->
+                    <div class="col-12 col-md-4 text-center">
+                        <img src="/static/Images/User.png" alt="Imagen del Usuario" class="img-fluid shadow rounded-circle user-image">
+                    </div>
+
+                    <!-- Información Escolar -->
+                    <div class="col-12 col-md-4">
+                        <div class="bg-light rounded p-3 shadow">
+                            <h2 class="text-center text-primary mb-3">Información Escolar</h2>
+                            <ul class="list-unstyled">
+                                <li><strong>Carrera:</strong> {{ user.carrera }}</li>
+                                <li><strong>Número de Control:</strong> 21212019</li>
+                                <li><strong>Email:</strong> {{ user.email }}</li>
+                                <li><strong>Periodo Actual:</strong> Semestre 5</li>
+                                <li><strong>Promedio:</strong> 95</li>
+                                <li><strong>Créditos Liberados:</strong> 50%</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Información Personal -->
+                    <div class="col-12 col-md-4">
+                        <div class="bg-light rounded p-3 shadow">
+                            <h2 class="text-center text-primary mb-3">Información Personal</h2>
+                            <ul class="list-unstyled">
+                                <li><strong>Nombre:</strong> {{ user.first_name }} {{ user.last_name }}</li>
+                                <li><strong>Fecha de Nacimiento:</strong> 12/08/2001</li>
+                                <li><strong>Dirección:</strong> Tec Tomas Aquino</li>
+                                <li><strong>Celular:</strong> 6634059937</li>
+                                <li><strong>Email:</strong> kevinws201@gmail.com</li>
+                                <li><strong>Tutor:</strong> Lionel Andrés Messi</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+</body>
+{% endblock %}
