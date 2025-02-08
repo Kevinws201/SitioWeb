@@ -1,0 +1,33 @@
+# Entorno virtual
+venv/
+env/
+*.pyc
+__pycache__/
+
+# Archivo de variables sensibles
+.env
+
+# Base de datos SQLite
+db.sqlite3
+
+# Archivos de migraciones generados
+# migrations/
+
+# Archivos de logs
+*.log
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de compilación
+*.egg-info/
+dist/
+build/
+
+# Configuraciones de IDEs
+.vscode/
+.idea/
+
+#Archivos temporales
+Notas

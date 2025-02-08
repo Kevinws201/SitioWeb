@@ -1,12 +1,62 @@
-# PENDIENTES ACTUALES Y FUTUROS CAMBIOS
-`Correos Automaticos` - Registrar correos automaticamente en base al username
-`Modificar Info` - El usuario podra modificar informacion sobre su cuenta (Opcional)
-`Pruebas unitarias y funcionales` - Pruebas unitarias y funcionales para depurar funcionalidad y posibles errores
-<!-- `Adaptabilidad`- Sea adaptable a cualquier tipo de pantalla -->
-<!-- `Ordenar archivos` - Re ordenar todos los archivos templates y sus hojas de estilo -->
-<!-- `Restablecer password`- Restablecer contraseña sin autenticar solo si el usuario ya inició sesion -->
-<!-- `Restructurar bdd`- Reconstruir la bdd con MySQL, unicamente valores validos -->
-<!-- `Seguridad password` - Si el usuario no ha iniciado sesion, tendra que indicar el correo y numero de control correctos para restablecer password -->
-<!-- `Documentacion` - Documentar todo el proyecto, cada modulo template y archivo de estilo -->
+# Sistema de Verificación de Estatus de Certificación Universitaria
 
-Correo Personal, numero de telefono, Boton para editar informacion personal en MiPanel, solo se podra actualizar la informacion 1 vez por semestre
+## 📌 Descripción
+
+Este proyecto es un software diseñado para verificar el estatus de certificación universitaria de los estudiantes. Su principal objetivo es proporcionar una herramienta eficiente y confiable para que los estudiantes consulten el estado de sus trámites de titulación. Esto reduce la carga de trabajo del personal administrativo y brinda mayor transparencia en el proceso.
+
+## 🎯 Características
+
+- ✅ **Automatización del seguimiento de trámites** - Permite a los estudiantes conocer el estado de su certificación sin depender de consultas presenciales.
+- ✅ **Reducción de carga administrativa** - Optimiza el trabajo del personal al minimizar consultas repetitivas.
+- ✅ **Acceso semipresencial** - Facilita la gestión de trámites de forma remota, reduciendo la necesidad de traslados innecesarios.
+- ✅ **Flexibilidad y escalabilidad** - Adaptable a distintos flujos de trabajo institucionales y con posibilidad de integración con otras universidades.
+- ✅ **Seguridad y privacidad** - Protección de datos personales y académicos, con acceso restringido a personal autorizado.
+
+## 🛠️ Tecnologías Utilizadas
+
+Actualmente, el proyecto utiliza las siguientes tecnologías:
+
+- **Lenguaje de programación:** Python.
+- **Frameworks y Librerías:** Django, Bootstrap.
+- **Base de Datos:** MySQL.
+
+## 🚀 Instalación y Uso
+
+1. Clona el repositorio:
+   ```
+   git clone https://github.com/usuario/repositorio.git
+   ```
+2. Instalar Python sitio web oficial: https://www.python.org/downloads/
+  
+4. Descargar e instalar entorno virtual:
+   ```
+   pip install virtualenv
+   virtualenv venv
+   ```
+5. Activar entorno virtual:
+   ```
+   .\venv\Scripts\activate
+   ```
+6. Instalar dependencias del proyecto:
+   ```
+   pip install -r requirements.txt
+   ```
+7. Configurar variables de entorno de la base de datos. 
+  Crear archivo .env en directorio raiz junto a manage.py. 
+  Configurar variables con nombre correcto segun tu servidor MySQL
+   ```
+   DB_NAME=mi_basededatos
+   DB_USER=mi_usuario_mysql
+   DB_PASSWORD=mi_contraseña_mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   ```
+8.  Realizar migraciones a la base de datos:
+   ```
+   python manage.py makemigrations
+   python manage.py migrate
+   ```
+8. Ejecutar el programa:
+   ```
+   python manage.py runserver
+   ```
